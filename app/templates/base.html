@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title><p>{{ title }} - ZEST</p><p </title>
+	{% else %}
+	<title>Welcome to the Site</title>
+	{% endif %}
+</head>
+<body bgcolor="#99ff99">
+	<div align="center"><a href="/index">ZEST</a></div>
+	<div align="right"><a href="#place_1">Place_1 |</a><a href="#place_2">Place_2 |</a><a href="/index">SIGN UP |</a><a href="/login">SIGN IN</a></div>
+	<hr>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<u1>
+	{% for message in messages %}
+		<li>{{ message }}</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}	
+	{% block content %}{% endblock %}
+
+</body>
+</html>
