@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import render_template, flash, redirect
 from app import app
 from .forms import LoginForm
@@ -31,3 +32,15 @@ def login():
 			(form.openid.data, str(form.remember_me.data)))
 		return redirect('/index')
 	return render_template("login.html", title='Sign In', form=form)
+=======
+from flask import render_template
+from app import app
+
+@app.route('/')
+@app.route('/index')
+def index():
+    user = {'nickname': 'Miguel'}  # fake user
+    return render_template('index.html',
+                           title='Home',
+                           user=user)
+>>>>>>> 1d3453808b40e3d59a26673ebdf283aafbd14959
